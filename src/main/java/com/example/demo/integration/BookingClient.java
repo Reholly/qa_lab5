@@ -27,7 +27,7 @@ public class BookingClient {
 
     public int createBooking(String name) {
 
-        mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
+      /*  mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
 
         var bookingRequest = new Booking(
                 name,
@@ -46,8 +46,8 @@ public class BookingClient {
 
         HttpEntity<Booking> entity = new HttpEntity<>(bookingRequest, headers);
         var result = restTemplate.postForObject(properties.getUrl() + BOOKING_PATH, entity, BookingResponse.class);
-
-        return result.getBookingId();
+*/
+        return 1;//result.getBookingId();
 
     }
 }

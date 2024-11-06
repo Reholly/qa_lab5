@@ -25,8 +25,9 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Optional<Student> getStudent(Long studentId) {
-        return studentRepository.findById(studentId);
+    public Student getStudent(Long studentId) {
+        return studentRepository.findById(studentId)
+                .orElseThrow(() -> new StudentNotFoundException("Student with such ID not found"));
     }
 
     public void addStudent(Student student) throws JsonProcessingException {
