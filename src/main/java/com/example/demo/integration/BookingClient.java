@@ -46,8 +46,8 @@ public class BookingClient {
 
         HttpEntity<Booking> entity = new HttpEntity<>(bookingRequest, headers);
         var result = restTemplate.postForObject(properties.getUrl() + BOOKING_PATH, entity, BookingResponse.class);
-*/
-        return 1;//result.getBookingId();
+        return result.getBookingId()*/;
+        return 1;
 
     }
 }

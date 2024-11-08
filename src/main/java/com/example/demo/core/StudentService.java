@@ -37,7 +37,9 @@ public class StudentService {
             throw new BadRequestException(
                     "Email " + student.getEmail() + " taken");
         }
+        var joke = chuckClient.getJoke().getValue();
         student.setJoke(chuckClient.getJoke().getValue());
+        var bookingId = bookingClient.createBooking(student.getName());
         student.setBookingId(bookingClient.createBooking(student.getName()));
         studentRepository.save(student);
     }
